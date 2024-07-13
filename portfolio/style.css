@@ -1,0 +1,421 @@
+:root {
+  --extra-dark: #041d25;
+  --mideam-dark: #073645;
+  --lite-dark: #059cb5;
+  --lite-main: #4bf0fb;
+
+  --Transparent-white: #fefefe80;
+  --Transparent-lite: #ffffff29;
+}
+html {
+  font-size: calc(1vw);
+  scroll-behavior: smooth;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--lite-dark);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--lite-main);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: white;
+  user-select: none;
+  outline: none;
+  border: none;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  /* font-family: 'Source Code Pro', monospace; */
+}
+body {
+  background: var(--extra-dark);
+}
+#loder {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background: rgb(0, 0, 0) url("images/loder-d-.gif") no-repeat center;
+  z-index: 5;
+  background-size: 30%;
+}
+/* ===================================  header section  ====================================== */
+
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("images/landing-page-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header .container {
+  padding: 10px 6%;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+nav .logo {
+  cursor: pointer;
+  font-size: 3.2rem;
+  font-weight: bolder;
+}
+nav .logo span {
+  color: var(--lite-main);
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0.5rem 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  position: relative;
+  transition: 0.5s;
+  font-family: sans-serif;
+}
+nav ul li a:hover {
+  color: var(--lite-main);
+}
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -6px;
+  height: 3px;
+  width: 0;
+  background: var(--lite-main);
+  transition: 0.5s;
+}
+nav ul li a:hover:after {
+  width: 100%;
+}
+
+.header .fa-xmark,
+.header .fa-bars {
+  display: none;
+}
+
+.header-content {
+  margin-top: 20%;
+  margin-left: 2%;
+}
+.header-text {
+  font-size: 3.3rem;
+  font-weight: bolder;
+}
+.header-text span {
+  color: var(--lite-main);
+}
+.header-content .btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3%;
+  gap: 2%;
+}
+.header-content .btn-container .btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  width: 10rem;
+  border: 0.2rem solid var(--lite-dark);
+  padding: 7px 0;
+  font-size: 1.4rem;
+  background: transparent;
+  color: var(--lite-dark);
+  transition: 0.4s;
+  position: relative;
+  z-index: 1;
+}
+.header-content .btn-container .btn:hover {
+  color: white;
+}
+.header-content .btn-container .btn::before {
+  transition: 0.4s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--lite-dark);
+  height: 100%;
+  width: 0;
+  z-index: -1;
+}
+.header-content .btn-container .btn:hover:before {
+  width: 100%;
+}
+.header-content .btn-container .btn:nth-child(2) {
+  background: transparent;
+  color: white;
+}
+.btn-container .btn:nth-child(2):hover {
+  color: var(--lite-dark);
+}
+.header-content .btn-container .btn:nth-child(2):hover::before {
+  width: 0%;
+}
+.header-content .btn-container .btn:nth-child(2)::before {
+  background: var(--lite-dark);
+  width: 100%;
+}
+
+/* ===================================  about as  ====================================== */
+.about {
+  border: 1px solid transparent;
+}
+.about .row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 6rem 8rem 6rem 8rem;
+}
+.about-col-1 {
+  flex-basis: 33%;
+  display: flex;
+  justify-content: center;
+}
+.about-col-1 div {
+  width: 28rem;
+  height: 35.5rem;
+  border: 0.2rem solid var(--lite-main);
+}
+.about-col-1 div img {
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+  width: auto;
+  height: 35.5rem;
+}
+.about-col-2 {
+  flex-basis: 50%;
+}
+.about-col-2 .intro {
+  width: 100%;
+  font-size: 3.2rem;
+  font-weight: bolder;
+}
+.about-col-2 .intro span {
+  color: var(--lite-main);
+}
+.about-link-tabs {
+  height: 22rem;
+}
+.teb-titles {
+  display: flex;
+  margin: 2rem 0 2rem;
+}
+.teb-links {
+  margin-right: 3rem;
+  font-size: 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  font-family: sans-serif;
+}
+.teb-links::after {
+  content: "";
+  width: 0;
+  height: 0.2rem;
+  background: var(--lite-main);
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  transition: 0.5s;
+}
+.active-link {
+  color: var(--lite-main);
+}
+.teb-links.active-link::after {
+  width: 100%;
+}
+.tab-contents {
+  font-size: 1.2rem;
+  font-family: sans-serif;
+}
+.tab-contents ul li {
+  list-style: none;
+  margin: 0.7rem 0;
+  font-family: sans-serif;
+}
+.tab-contents ul li span {
+  color: var(--lite-main);
+  font-size: 1.5rem;
+  font-family: sans-serif;
+}
+.tab-contents {
+  display: none;
+  font-family: sans-serif;
+}
+.tab-contents.active-tab {
+  display: block;
+}
+
+/* some common elements in different section */
+
+.content-sections {
+  border: 1px solid transparent;
+}
+.sections-containers {
+  margin: 4rem 2rem 7rem;
+}
+.section-title {
+  display: flex;
+  justify-content: center;
+  font-size: 3.2rem;
+  font-weight: bolder;
+  color: var(--lite-main);
+}
+.diwider-line {
+  width: 54rem;
+  height: 0.15rem;
+  background: var(--lite-main);
+  margin: 0 auto;
+  position: relative;
+}
+.diwider-line::before {
+  content: "";
+  height: 0.7rem;
+  width: 0.7rem;
+  position: absolute;
+  top: 0.1rem;
+  left: -0.3rem;
+  background-color: var(--lite-main);
+  transform: rotateZ(45deg);
+  transform-origin: top right;
+}
+.diwider-line::after {
+  content: "";
+  height: 0.7rem;
+  width: 0.7rem;
+  position: absolute;
+  top: 0.1rem;
+  right: -0.3rem;
+  background-color: var(--lite-main);
+  transform: rotateZ(45deg);
+  transform-origin: top right;
+}
+
+.explore-button {
+  margin: 1.5rem auto 1rem auto;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 900;
+  padding: 0.5rem 1.6rem;
+  width: fit-content;
+  border: 0.2rem solid var(--lite-main);
+  color: var(--lite-main);
+  background: transparent;
+}
+
+/* ===================================  Media Query ====================================== */
+
+@media only screen and (max-width: 450px) {
+  html {
+    font-size: calc(2vw);
+  }
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  /* ================================  header section =================================== */
+
+  .header {
+    height: 100vh;
+    width: 100%;
+    background-image: url("images/c0d43d331020f824ace55f3ad167d88c.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  nav .logo {
+    font-size: 4rem;
+  }
+  .header .fa-xmark,
+  .header .fa-bars {
+    font-size: 3rem;
+    display: block;
+  }
+  #sidemenu {
+    position: fixed;
+    top: 0;
+    right: -36rem;
+    height: 100vh;
+    width: 35rem;
+    /* background-color: #0077b5; */
+    background-color: var(--lite-dark);
+    padding: 3rem;
+    transition: 0.5s ease-in;
+    z-index: 5;
+  }
+  #sidemenu i {
+    margin-bottom: 5rem;
+  }
+  #sidemenu li {
+    margin: 2rem 0;
+    display: block;
+  }
+  #sidemenu li a {
+    width: 100%;
+    font-size: 4rem;
+  }
+  .header-content {
+    margin: 70% auto;
+  }
+  .header-text {
+    font-size: 4.3rem;
+  }
+  .header-content .btn-container {
+    margin-top: 10%;
+    gap: 5%;
+  }
+  .header-content .btn-container .btn {
+    width: 15rem;
+    font-size: 2rem;
+  }
+
+  /* ===================================  about ====================================== */
+  .about .row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 6rem auto 6rem;
+    gap: 7rem;
+  }
+  .about-col-1 div {
+    margin: 0 2rem 0 0;
+    width: 34rem;
+    height: 44rem;
+    border: 0.3rem solid var(--lite-main);
+  }
+  .about-col-1 div img {
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+    /* width: 28rem; */
+    width: 34rem;
+    height: 44rem;
+    /* height: 35.5rem; */
+  }
+  .about-col-2 {
+    margin: 0 2rem;
+  }
+}

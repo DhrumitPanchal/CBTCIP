@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dhrumit Panchal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header" id="Home">
+      <div class="container">
+        <nav>
+          <a href>
+            <div class="logo"><span>D</span>hrumit</div>
+          </a>
+          <ul id="sidemenu">
+            <i class="fa-solid fa-xmark fas" onclick="closemenu()"></i>
+            <li onclick="closemenu()"><a href="#Home">Home</a></li>
+            <li onclick="closemenu()"><a href="#About">About Me</a></li>
+            <li onclick="closemenu()"><a href="#Services">Services</a></li>
+            <li onclick="closemenu()"><a href="#Work">My Work</a></li>
+            <li onclick="closemenu()"><a href="#Contact">Contact</a></li>
+          </ul>
+          <i class="fa-solid fa-bars fas" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-content">
+          <div class="header-text">
+            Hi, i’m <span>developer</span>. <br />
+            I love develop next <br />
+            generation products!
+          </div>
+          <div class="btn-container">
+            <a class="btn" href="resume dhrumit.pdf" download="">Resume</a>
+            <a
+              class="btn"
+              onclick="location.href='mailto:dhrumitpanchal789@gamicom'"
+              >Get In Touch!</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================= about as ===================================== -->
+
+    <div class="about" id="About">
+      <div class="row">
+        <div class="about-col-1">
+          <div>
+            <img src="images/dhrumit-compresed.jpg" alt />
+          </div>
+        </div>
+        <div class="about-col-2">
+          <!-- introduction -->
+          <p class="intro">
+            Hello! <br />
+            My name is <span>Dhrumit</span>, I am a
+            <span>web developer</span>,<span> UI designer</span> and
+            <span>sketch artist</span>.
+          </p>
+          <!-- introduction -->
+
+          <!-- about-skills-experience-education -->
+
+          <!-- tab links -->
+          <div class="about-link-tabs">
+            <div class="teb-titles">
+              <p class="teb-links active-link" onclick="opentab('about')">
+                About
+              </p>
+              <p class="teb-links" onclick="opentab('skills')">Skills</p>
+              <p class="teb-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="teb-links" onclick="opentab('education')">Education</p>
+            </div>
+            <!-- tab links -->
+
+            <!-- About content -->
+            <div class="tab-contents active-tab" id="about">
+              As a web developer and frontend enthusiast, I am eager to
+              contribute my skills to a dynamic organization. With a solid
+              foundation in web development from silver Oak University, I
+              possess expertise in UI/UX design tools and thrive in crafting
+              modern and creative website and mobile app interfaces. I
+              specialize in developing responsive and visually appealing
+              websites. In fact, my first project was the design and development
+              of my own portfolio website during my first semester in college,
+              showcasing my self-designed UI/UX. Let's connect and create
+              something remarkable together!
+            </div>
+
+            <!-- Skills content -->
+            <div class="tab-contents" id="skills">
+              <ul>
+                <li>
+                  <span>Web Devlopment</span><br />HTML,CSS and JAVASCRIPT
+                </li>
+                <li>
+                  <span>Backend Language</span><br />SQL and PLSQL for Backend
+                </li>
+                <li>
+                  <span>Logic Development</span><br />C and C++ for Logic
+                  Devlopment
+                </li>
+              </ul>
+            </div>
+
+            <!-- experience content -->
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li><span>Fresher</span></li>
+              </ul>
+              Despite being a student, you possess remarkable skills in
+              developing and designing websites. Your talent for creating
+              outstanding projects showcases your dedication and proficiency in
+              this field. While others may have had more experience, your
+              natural aptitude and determination have allowed you to surpass
+              expectations. Your projects stand as a testament to your creative
+              prowess, demonstrating your ability to conceptualize and execute
+              stunning designs. With each endeavor, you continue to expand your
+              skillset and leave a lasting impact, proving that your potential
+              knows no bounds. As you continue to grow and explore new
+              opportunities, your remarkable abilities will undoubtedly lead to
+              even more extraordinary achievements.
+            </div>
+
+            <!-- education content -->
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>BCA</span><br />From Silver Oak University</li>
+                <li>
+                  <span>HSC</span><br />Completed my Higher Schooling (HSC)
+                  <br />
+                  from Mangaldeep School school
+                </li>
+                <li>
+                  <span>SSC</span><br />Completed my Secondary Schooling (SSC)
+                  <br />
+                  from Ranchena School school
+                </li>
+              </ul>
+            </div>
+
+            <!-- about-skills-experience-education -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
