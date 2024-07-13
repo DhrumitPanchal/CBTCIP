@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.Main {
+  background-image: url("./assets/flowers-8763039.jpg");
+  background-size: cover;
+}
