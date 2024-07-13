@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Card from "./Components/Card";
+import HomePage from "./Pages/HomePage";
+import Mycontext from "./Context/Context";
+import { Toaster } from "react-hot-toast";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Mycontext>
+        <Toaster />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/card" element={<Card />} />
+          <Route path="/UpdateTask/:ID" element={<Card />} />
+        </Routes>
+      </Mycontext>
+    </BrowserRouter>
   );
 }
 
