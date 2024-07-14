@@ -14,47 +14,72 @@ function HomePage() {
         />
       </section>
 
-      {/* <section className="p-[1.5rem] max-sm:p-[1rem] flex flex-col w-full h-screen max-sm:h-fit gap-[1.5rem] bg-slate-100">
+      <section className="p-[1.5rem] max-sm:p-[1rem] flex flex-col w-full h-screen max-sm:h-fit gap-[1.5rem] bg-slate-100">
         <div className="flex max-sm:flex-col max-sm:gap-[1rem] gap-[1.5rem] w-full h-3/5">
-          <div className="w-full h-full bg-red-100 ">
+          <div className="relative w-full h-full overflow-hidden group">
             <img
-              src="https://i.pinimg.com/564x/7b/c4/3f/7bc43f8561ecedfee36b3d6070361da0.jpg"
+              src="https://images.ctfassets.net/q602vtcuu3w3/7FN9jV5pR4KceNjErZ4DKw/434860b70c439739c13b4f759946b996/24_JULY_HOMEPAGE_ASSETS_EM58.jpg?w=1420&q=80&fm=webp"
               alt=""
               className="w-full h-full max-sm:h-fit "
             />
+            <div className="absolute flex justify-center items-center left-0 z-20 w-full h-full top-[50%] opacity-0 hover:opacity-100 group-hover:top-0 hover:bg-black/30 transition-all duration-150">
+              <h2 className="text-[2rem] font-bold text-white">
+                Summer Dresses
+              </h2>
+            </div>
           </div>
-          <div className="w-full h-full bg-red-100 ">
+          <div className="relative w-full h-full overflow-hidden group">
             <img
-              src="https://img.freepik.com/free-photo/photocomposition-horizontal-online-shopping-banner_23-2151201771.jpg?w=1060&t=st=1709046640~exp=1709047240~hmac=d9ab76cfbca0bb544a94d6de81cd650a4f203e052212919b717e6b9dbcf1bef2"
+              src="https://images.ctfassets.net/q602vtcuu3w3/7xiw5zdSfVK31SfEpbyi5d/c3d20d1311a9000abe55e25c7d13bc03/24_JULY_HOMEPAGE_ASSETS_EM.jpg?w=710&q=80&fm=webp"
               alt=""
               className="w-full h-full max-sm:h-fit"
             />
+            <div className="absolute flex justify-center items-center left-0 z-20 w-full h-full top-[50%] opacity-0 hover:opacity-100 group-hover:top-0 hover:bg-black/30 transition-all duration-150">
+              <h2 className="text-[2rem] font-bold text-white">
+                Denim Outfits
+              </h2>
+            </div>
           </div>
         </div>
         <div className="max-sm:hidden flex max-sm:flex-col max-sm:gap-[1rem] gap-[1.5rem] w-full  h-2/5">
-          <div className="w-full h-full bg-red-100 ">
+          <div className="relative w-full h-full overflow-hidden group">
             <img
-              src="https://img.freepik.com/free-photo/photocomposition-horizontal-online-shopping-banner_23-2151201771.jpg?w=1060&t=st=1709046640~exp=1709047240~hmac=d9ab76cfbca0bb544a94d6de81cd650a4f203e052212919b717e6b9dbcf1bef2"
+              src="https://images.ctfassets.net/q602vtcuu3w3/2phu60i1EqhFkzbnyuboAr/236d37597b7ac2054f07230a48329fb5/24_JULY_HOMEPAGE_ASSETS_EM12.jpg?w=1420&q=80&fm=webp"
               alt=""
               className="w-full h-full max-sm:h-fit"
             />
+            <div className="absolute flex justify-center items-center left-0 z-20 w-full h-full top-[50%] opacity-0 hover:opacity-100 group-hover:top-0 hover:bg-black/30 transition-all duration-150">
+              <h2 className="text-[1.6rem] font-bold text-white">
+                Hoodies + Sweatshirts
+              </h2>
+            </div>
           </div>
-          <div className="w-full h-full bg-red-100 ">
+          <div className="relative w-full h-full overflow-hidden group">
             <img
-              src="https://img.freepik.com/free-photo/photocomposition-horizontal-online-shopping-banner_23-2151201771.jpg?w=1060&t=st=1709046640~exp=1709047240~hmac=d9ab76cfbca0bb544a94d6de81cd650a4f203e052212919b717e6b9dbcf1bef2"
+              src="https://images.ctfassets.net/q602vtcuu3w3/66TvFu8pLZ4y0x0esxFgPc/0328bc38716bd2e850544ed018d55964/24_JULY_HOMEPAGE_ASSETS_EM.jpg?w=1420&q=80&fm=webp"
               alt=""
               className="w-full h-full max-sm:h-fit"
             />
+            <div className="absolute flex justify-center items-center left-0 z-20 w-full h-full top-[50%] opacity-0 hover:opacity-100 group-hover:top-0 hover:bg-black/30 transition-all duration-150">
+              <h2 className="text-[1.6rem] font-bold text-white">
+                College + Dorm Essentials
+              </h2>
+            </div>
           </div>
-          <div className="w-full h-full bg-red-100 ">
+          <div className="relative w-full h-full overflow-hidden group">
             <img
-              src="https://img.freepik.com/free-photo/photocomposition-horizontal-online-shopping-banner_23-2151201771.jpg?w=1060&t=st=1709046640~exp=1709047240~hmac=d9ab76cfbca0bb544a94d6de81cd650a4f203e052212919b717e6b9dbcf1bef2"
+              src="https://images.ctfassets.net/q602vtcuu3w3/7H5VwrITXWYAgWj3ONhDXq/e8c7bd5ff11783761ac9e055787916bf/24_JULY_HOMEPAGE_ASSETS_EM13.jpg?w=1420&q=80&fm=webp"
               alt=""
               className="w-full h-full max-sm:h-fit"
             />
+            <div className="absolute flex justify-center items-center left-0 z-20 w-full h-full top-[50%] opacity-0 hover:opacity-100 group-hover:top-0 hover:bg-black/30 transition-all duration-150">
+              <h2 className="text-[1.6rem] font-bold text-white">
+                Spotlight On: Jorts
+              </h2>
+            </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       <section className="py-[3rem] flex items-center flex-col">
         <h2 className="text-[1.8rem] font-semibold">

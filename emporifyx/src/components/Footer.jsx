@@ -65,7 +65,7 @@ function Footer() {
         </div>
 
         <div className=" w-full px-[4rem] py-[1.4rem] border-t-[1px] border-white">
-          <h2 className="text-center">© 2024 ShopNest | All Rights Reserved</h2>
+          <h2 className="text-center">© 2024 Emporifyx | All Rights Reserved</h2>
         </div>
       </footer>
     </>
