@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 
 function Footer() {
-    let { pathname } = useLocation();
+  let { pathname } = useLocation();
   let isAdminPath = pathname.slice(1, 6);
   if (isAdminPath === "admin") return;
   if (isAdminPath === "login") return;
@@ -12,7 +12,7 @@ function Footer() {
       <footer className=" left-0 w-full pt-[1rem] bg-black text-white">
         <div className="w-full px-[4rem] max-sm:px-[2.6rem] py-[3rem] flex max-sm:flex-col gap-[4rem] max-sm:gap-[2rem]">
           <div className="flex flex-col justify-between w-1/3 max-sm:w-full">
-            <h2 className="text-[1.4rem] font-semibold">URBAN FASHION</h2>
+            <h2 className="text-[1.4rem] font-semibold">EMPORIFYX</h2>
             <p className="mt-[.6rem] text-[1rem] font-light tracking-[.1rem]">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora,
               nisi. Harum alias illo consectetur quam corporis reprehenderit
