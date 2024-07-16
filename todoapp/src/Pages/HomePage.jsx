@@ -19,7 +19,7 @@ function HomePage() {
         <nav className="flex items-center justify-between">
           <div className="px-[.2rem] flex items-center gap-[.4rem]">
             <img className="h-[2.1rem]" src="./Images/AppLogo.svg" alt="" />
-            <h2 className="logo text-[1.6rem] font-semibold ">Taskify</h2>
+            <h2 className="logo text-[1.6rem] font-semibold ">Todo app</h2>
           </div>
           <Link to={"/card"}>
             <div className="cursor-pointer flex items-center justify-center gap-[.4rem] h-[2.4rem] w-[8rem] rounded-[.6rem] bg-blue-500/20 text-blue-700">

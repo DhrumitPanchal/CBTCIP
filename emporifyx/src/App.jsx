@@ -13,7 +13,8 @@ const LikedProductPage = lazy(() => import("./Pages/LikedProductsPage"));
 const CartPage = lazy(() => import("./Pages/CartPage"));
 const SingleProductPage = lazy(() => import("./Pages/SingleProductPage"));
 const ProfilePage = lazy(() => import("./Pages/ProfilePage"));
-
+const AdminPage = lazy(() => import("./Pages/AdminPages/AdminPage"));
+const AdminLogin = lazy(() => import("./Pages/AdminPages/AdminLogin"));
 function App() {
   return (
     <>
@@ -34,6 +35,25 @@ function App() {
               <Route path="profile" element={<ProfilePage />} />
               <Route path="/Likedproducts" element={<LikedProductPage />} />
               <Route path="/cart" element={<CartPage />} />
+
+              <Route path="/admin">
+                <Route path="" element={<AdminLogin />} />
+                <Route path="order" element={<AdminPage Path={"order"} />} />
+                <Route
+                  path="products"
+                  element={<AdminPage Path={"products"} />}
+                />
+                <Route
+                  path="products/add"
+                  element={<AdminPage Path={"AddProducts"} />}
+                />
+                <Route
+                  path="products/update/:id"
+                  element={<AdminPage Path={"AddProducts"} />}
+                />
+                <Route path="user" element={<AdminPage Path={"user"} />} />
+                <Route path="graphs" element={<AdminPage Path={"graphs"} />} />
+              </Route>
             </Routes>
             <Footer />
           </MyContext>
