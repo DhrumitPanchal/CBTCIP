@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Loading from "./components/Loading";
+import MyContext from "./Context/Context";
 const Navbar = lazy(() => import("./components/Navbar"));
 const Footer = lazy(() => import("./components/Footer"));
 const LoginPage = lazy(() => import("./Pages/LoginPage"));
@@ -16,17 +17,19 @@ function App() {
     <>
       <BrowserRouter>
         <Suspense fallback={<Loading />}>
-          <Toaster />
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/Likedproducts" element={<LikedProductPage />} />
-            <Route path="/cart" element={<CartPage />} />
-          </Routes>
-          <Footer />
+          <MyContext>
+            <Toaster />
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/Likedproducts" element={<LikedProductPage />} />
+              <Route path="/cart" element={<CartPage />} />
+            </Routes>
+            <Footer />
+          </MyContext>
         </Suspense>
       </BrowserRouter>
     </>

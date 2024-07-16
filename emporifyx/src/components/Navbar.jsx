@@ -1,15 +1,15 @@
 import { NavLink, Link, useLocation } from "react-router-dom";
-import { HiOutlineShoppingBag } from "react-icons/hi2";
-import { FaRegUser } from "react-icons/fa";
-import { GoHome } from "react-icons/go";
+import { IoHomeOutline } from "react-icons/io5";
 import { BsBox2 } from "react-icons/bs";
+import { IoBagOutline } from "react-icons/io5";
+import { IoPersonOutline } from "react-icons/io5";
 
-import { FaRegHeart } from "react-icons/fa";
+import { IoMdHeartEmpty } from "react-icons/io";
 import { useState } from "react";
 
 function Navbar() {
   const [menu, setMenu] = useState(false);
-  const [isLogdin, setIsLogdin] = useState(false);
+  const [isLogdin, setIsLogdin] = useState(true);
   let { pathname } = useLocation();
   let isAdminPath = pathname.slice(1, 6);
   if (isAdminPath === "admin") return;
@@ -21,7 +21,7 @@ function Navbar() {
     <>
       <nav
         id="navbar"
-        className="relative z-50 px-[2.4rem] h-[3.5rem] max-sm:px-[1rem] flex justify-between items-center bg-white"
+        className="relative z-50 px-[2.4rem] h-[3.5rem] max-sm:px-[1rem] flex justify-between items-center "
       >
         <Link to="/" className="cursor-pointer text-[1.3rem] font-bold">
           EMPORIFYX
@@ -40,21 +40,21 @@ function Navbar() {
             Products
           </NavLink>
         </ul>
-        <div className="flex items-center  gap-[.4rem] max-sm:gap-0">
+        <div className="flex items-center   gap-[.4rem] max-sm:gap-0">
           <Link className="z-40 max-sm:block hidden p-[.8rem] " to="/">
-            <GoHome className="cursor-pointer text-[2rem]" />
+            <IoHomeOutline className="cursor-pointer text-[1.7rem]" />
           </Link>
 
           <Link className="z-40  max-sm:block hidden p-[.8rem] " to="/products">
-            <BsBox2 className="cursor-pointer text-[1.6rem]" />
+            <BsBox2 className="cursor-pointer text-[1.4rem]" />
           </Link>
 
           <Link className="z-40 p-[.8rem] " to="/Likedproducts">
-            <FaRegHeart className="cursor-pointer text-[1.6rem]" />
+            <IoMdHeartEmpty className="cursor-pointer text-[1.7rem]" />
           </Link>
 
           <Link className="relative z-40 p-[.8rem] " to="/cart">
-            <HiOutlineShoppingBag className="cursor-pointer text-[2rem]" />
+            <IoBagOutline className="cursor-pointer text-[1.7rem]" />
           </Link>
 
           {!isLogdin ? (
@@ -67,7 +67,7 @@ function Navbar() {
             </Link>
           ) : (
             <div onClick={() => setMenu(!menu)} className="z-40 p-[.8rem] ">
-              <FaRegUser className=" text-[1.6rem]" />
+              <IoPersonOutline className=" text-[1.6rem]" />
             </div>
           )}
         </div>

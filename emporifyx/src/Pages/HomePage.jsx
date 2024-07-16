@@ -6,9 +6,9 @@ const ProductCard = lazy(() => import("../components/ProductCard"));
 function HomePage() {
   return (
     <>
-      <section className="bg-red-100 h-[calc(100vh-3.5rem)] max-sm:h-fit w-full flex">
+      <section className="h-[calc(100vh-3.5rem)] max-sm:h-fit w-full flex">
         <img
-          src="https://i.pinimg.com/originals/39/d0/a7/39d0a7e4ee4300d46910b1eb77b388f2.jpg"
+          src="https://image.wconcept.co.kr/images/img/event/20210120_dunst/01.jpg"
           alt=""
           className="w-full h-full max-sm:h-fit"
         />
