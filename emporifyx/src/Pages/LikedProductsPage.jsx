@@ -1,17 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
-import productData from "../components/ProductData";
+import { Context } from "../Context/Context";
 function LikedProPage() {
-  const [likedProduct, setLikedProduct] = useState(productData);
+  const { user, productData } = useContext(Context);
+  const [likedProduct, setLikedProduct] = useState(null);
 
-  //   useEffect(() => {
-  //     if (!productData || !user?.likedProducts) return;
+  useEffect(() => {
+    if (!productData || !user?.likedProducts) return;
 
-  //     const filteredProducts = productData.filter((product) =>
-  //       user?.likedProducts.some((item) => item.productId === product?._id)
-  //     );
-  //     setLikedProduct(filteredProducts);
-  //   }, [user, user.likedProducts, productData]);
+    const filteredProducts = productData.filter((product) =>
+      user.likedProducts.some((item) => item.productId === product?._id)
+    );
+    setLikedProduct(filteredProducts);
+  }, [user, user.likedProducts, productData]);
 
   return (
     <div className="mt-[2rem] mb-[4rem] px-[3rem] max-sm:px-[1rem] flex flex-wrap max-sm:justify-between min-h-[calc(100vh-3.5rem)] w-full gap-[3rem] max-sm:gap-[1rem]">

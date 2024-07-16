@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import { Context } from "../Context/Context";
 import { useNavigate } from "react-router-dom";
 
 function Cartcard(props) {
@@ -8,7 +9,8 @@ function Cartcard(props) {
   const [productQuantity, setProductQuantity] = useState(null);
 
   const navigator = useNavigate();
-
+  const { handleAddToCart, handleRemoveFromCart, handelSingleOrder } =
+    useContext(Context);
   useEffect(() => {
     setProductQuantity(quantity);
   }, []);
@@ -46,13 +48,35 @@ function Cartcard(props) {
         </div>
 
         <div className="max-sm:mt-[.6rem] w-[7rem] flex gap-[1rem]">
-          <div className="cursor-pointer h-[1.6rem] w-[1.6rem] text-[1.3rem] rounded-[.2rem] flex justify-center transition-colors duration-300 items-center bg-black/80 hover:bg-black text-white">
+          <div
+            onClick={() => {
+              handleAddToCart(
+                ProductData._id,
+                productQuantity + 1,
+                ProductData.product_price
+              );
+              setProductQuantity(productQuantity + 1);
+            }}
+            className="cursor-pointer h-[1.6rem] w-[1.6rem] text-[1.3rem] rounded-[.2rem] flex justify-center transition-colors duration-300 items-center bg-black/80 hover:bg-black text-white"
+          >
             <FaPlus className="text-[.6rem]" />
           </div>
           <h2 className=" select-none text-[1.4rem] leading-[1.6rem]  text-black">
             {productQuantity}
           </h2>
-          <div className="cursor-pointer h-[1.6rem] w-[1.6rem] text-[1.3rem] rounded-[.2rem] flex justify-center transition-colors duration-300 items-center bg-black/80 hover:bg-black text-white">
+          <div
+            onClick={() => {
+              if (productQuantity > 1) {
+                handleAddToCart(
+                  ProductData._id,
+                  productQuantity - 1,
+                  ProductData.product_price
+                );
+                setProductQuantity(productQuantity - 1);
+              }
+            }}
+            className="cursor-pointer h-[1.6rem] w-[1.6rem] text-[1.3rem] rounded-[.2rem] flex justify-center transition-colors duration-300 items-center bg-black/80 hover:bg-black text-white"
+          >
             <FaMinus className="text-[.6rem]" />
           </div>
         </div>
@@ -63,10 +87,24 @@ function Cartcard(props) {
         </div>
 
         <div className=" mr-[2rem] flex gap-[2rem]">
-          <div className="cursor-pointer flex items-center px-[2rem] h-[2.2rem] w-fit rounded-[.4rem] text-[1.1rem] font-semibold text-white bg-green-600/70 hover:bg-green-600 transition-all duration-300">
+          <div
+            onClick={() =>
+              handelSingleOrder(
+                ProductData?._id,
+                ProductData?.product_price,
+                productQuantity
+              )
+            }
+            className="cursor-pointer flex items-center px-[2rem] h-[2.2rem] w-fit rounded-[.4rem] text-[1.1rem] font-semibold text-white bg-green-600/70 hover:bg-green-600 transition-all duration-300"
+          >
             Buy
           </div>
-          <div className="cursor-pointer flex items-center px-[2rem] h-[2.2rem] w-fit rounded-[.4rem] text-[1.1rem] font-semibold text-white bg-red-500/80 hover:bg-red-500  transition-all duration-300">
+          <div
+            onClick={() => {
+              handleRemoveFromCart(ProductData?._id);
+            }}
+            className="cursor-pointer flex items-center px-[2rem] h-[2.2rem] w-fit rounded-[.4rem] text-[1.1rem] font-semibold text-white bg-red-500/80 hover:bg-red-500  transition-all duration-300"
+          >
             Remove
           </div>
         </div>

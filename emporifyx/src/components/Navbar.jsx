@@ -1,21 +1,28 @@
-import { NavLink, Link, useLocation } from "react-router-dom";
+import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
 import { IoHomeOutline } from "react-icons/io5";
 import { BsBox2 } from "react-icons/bs";
 import { IoBagOutline } from "react-icons/io5";
 import { IoPersonOutline } from "react-icons/io5";
-
+import Cookies from "js-cookie";
+import { Context } from "../Context/Context";
 import { IoMdHeartEmpty } from "react-icons/io";
-import { useState } from "react";
-
+import { useState, useContext } from "react";
 function Navbar() {
-  const [menu, setMenu] = useState(false);
+  const { user } = useContext(Context);
   const [isLogdin, setIsLogdin] = useState(true);
+  const [menu, setMenu] = useState(false);
+  const navigator = useNavigate();
   let { pathname } = useLocation();
   let isAdminPath = pathname.slice(1, 6);
   if (isAdminPath === "admin") return;
   if (isAdminPath === "login") return;
   isAdminPath = pathname.slice(1, 9);
   if (isAdminPath === "register") return;
+
+  function logout() {
+    navigator("/login");
+    return Cookies.remove("userAccessToken");
+  }
 
   return (
     <>
@@ -54,6 +61,11 @@ function Navbar() {
           </Link>
 
           <Link className="relative z-40 p-[.8rem] " to="/cart">
+            {user?.cartProducts?.length > 0 && (
+              <div className="absolute flex justify-center items-center text-[.8rem] top-[1rem] right-[.6rem] h-[1.2rem] w-[1.2rem] rounded-full  text-white bg-black">
+                {user?.cartProducts?.length}
+              </div>
+            )}
             <IoBagOutline className="cursor-pointer text-[1.7rem]" />
           </Link>
 
@@ -83,8 +95,20 @@ function Navbar() {
               Profile
             </h2>
           </Link>
-
-          <h2 className="w-full text-black transition-colors duration-300 cursor-pointer">
+          {user.userRole === "admin" && (
+            <Link to="admin/order">
+              <h2
+                onClick={() => setMenu(!menu)}
+                className="w-full text-black transition-colors duration-300 cursor-pointer"
+              >
+                Admin
+              </h2>
+            </Link>
+          )}
+          <h2
+            onClick={() => logout()}
+            className="w-full text-black transition-colors duration-300 cursor-pointer"
+          >
             Log Out
           </h2>
         </div>

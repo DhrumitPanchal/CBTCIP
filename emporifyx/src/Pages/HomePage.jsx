@@ -1,9 +1,12 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useContext } from "react";
 import Loading from "../components/Loading";
-import productData from "../components/ProductData";
+import { Context } from "../Context/Context";
+
 const ProductCard = lazy(() => import("../components/ProductCard"));
 
 function HomePage() {
+  const { productData } = useContext(Context);
+
   return (
     <>
       <section className="h-[calc(100vh-3.5rem)] max-sm:h-fit w-full flex">
@@ -89,8 +92,8 @@ function HomePage() {
 
         <div className=" mt-[3rem] flex justify-center flex-wrap gap-[3rem] max-sm:gap-[1rem] ">
           <Suspense fallback={<Loading />}>
-            {productData?.map((e) => (
-              <ProductCard key={e._id} data={e} />
+            {productData?.map((e, index) => (
+              <ProductCard key={index} data={e} />
             ))}
           </Suspense>
         </div>

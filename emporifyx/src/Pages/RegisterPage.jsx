@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../Context/Context";
 
 function RegisterPage() {
+  const { handelSignUp } = useContext(Context);
   const [formData, setFromData] = useState({
     name: "",
     email: "",
@@ -48,7 +50,10 @@ function RegisterPage() {
             placeholder="Password"
           />
 
-          <div className="cursor-pointer mt-[1rem] flex justify-center items-center h-[2.4rem] w-[8rem] rounded-[.8rem] text-[1.2rem] font-semibold  transition-colors duration-300 bg-blue-500/20 text-blue-700 hover:bg-[#6060e3] hover:text-white ">
+          <div
+            onClick={() => handelSignUp(formData)}
+            className="cursor-pointer mt-[1rem] flex justify-center items-center h-[2.4rem] w-[8rem] rounded-[.8rem] text-[1.2rem] font-semibold  transition-colors duration-300 bg-blue-500/20 text-blue-700 hover:bg-[#6060e3] hover:text-white "
+          >
             Register
           </div>
 

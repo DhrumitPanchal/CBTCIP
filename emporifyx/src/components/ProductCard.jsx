@@ -1,11 +1,30 @@
 /* eslint-disable react/prop-types */
+import { useNavigate } from "react-router-dom";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { useState, useRef } from "react";
+import { useEffect, useState, useContext, useRef } from "react";
+import { Context } from "../Context/Context";
 function ProductCard(props) {
+  const { user, handleLikedProducts } = useContext(Context);
+  const data = props?.data;
   const [liked, setLiked] = useState(false);
   const cardRef = useRef(null);
 
-  const { data } = props;
+  const navigator = useNavigate();
+
+  const handleLikeClick = (event) => {
+    event.stopPropagation();
+    setLiked(!liked);
+    handleLikedProducts(data?._id);
+  };
+  useEffect(() => {
+    const checkIsLiked = user?.likedProducts?.some(
+      (item) => item?.productId === data?._id
+    );
+
+    if (checkIsLiked) {
+      setLiked(true);
+    }
+  }, [user.likedProducts, data, user, liked]);
 
   return (
     <>
@@ -19,7 +38,10 @@ function ProductCard(props) {
             <img src={data?.Image_url} alt="" className="h-full" />
           </div>
 
-          <div className="group-hover:flex max-sm:flex hidden transition-all duration-700  absolute top-[.8rem] bg-white/60 rounded-full right-[.8rem]  justify-center items-center z-20 mt-[.2rem] h-[1.9rem] w-[1.9rem]">
+          <div
+            onClick={handleLikeClick}
+            className="group-hover:flex max-sm:flex hidden transition-all duration-700  absolute top-[.8rem] bg-white/60 rounded-full right-[.8rem]  justify-center items-center z-20 mt-[.2rem] h-[1.9rem] w-[1.9rem]"
+          >
             {liked ? (
               <FaHeart className="text-red-500 text-[1rem] " />
             ) : (
